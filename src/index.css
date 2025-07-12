@@ -115,7 +115,42 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    /* Base font size for rem calculations - mobile first */
+    font-size: 14px;
+  }
+
   body {
     @apply bg-background text-foreground;
+    /* Safe areas for devices with notch/dynamic island */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Progressive font scaling for larger screens */
+  @media (min-width: 480px) {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 17px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    html {
+      font-size: 18px;
+    }
   }
 }

@@ -41,26 +41,32 @@ const timelineEvents = [
 
 export const Timeline = () => {
   return (
-    <section className="relative py-16 px-4 overflow-hidden">
-      {/* Elementos decorativos militares no fundo */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Shield className="absolute top-20 left-10 w-16 h-16 text-muted-foreground/20 rotate-12" />
-        <Swords className="absolute top-40 right-20 w-12 h-12 text-muted-foreground/15 -rotate-45" />
-        <Plane className="absolute top-60 left-1/4 w-14 h-14 text-muted-foreground/20 rotate-45" />
-        <Target className="absolute top-80 right-1/3 w-10 h-10 text-muted-foreground/25" />
-        <Crown className="absolute top-96 left-20 w-12 h-12 text-muted-foreground/20 rotate-12" />
-        <Flag className="absolute bottom-40 right-16 w-14 h-14 text-muted-foreground/15 -rotate-12" />
-        <Zap className="absolute bottom-60 left-1/3 w-10 h-10 text-muted-foreground/20 rotate-45" />
-        <Users className="absolute bottom-80 right-1/4 w-16 h-16 text-muted-foreground/15" />
-        <Shield className="absolute bottom-20 left-1/2 w-12 h-12 text-muted-foreground/20 -rotate-12" />
+    <section 
+      className="relative py-[2rem] px-[1rem] sm:py-[3rem] sm:px-[1.5rem] md:py-[4rem] md:px-[2rem] overflow-hidden"
+      style={{
+        paddingLeft: `calc(1rem + env(safe-area-inset-left))`,
+        paddingRight: `calc(1rem + env(safe-area-inset-right))`
+      }}
+    >
+      {/* Elementos decorativos militares no fundo - adaptativos */}
+      <div className="absolute inset-0 pointer-events-none hidden md:block">
+        <Shield className="absolute top-[5rem] left-[2.5rem] w-[4rem] h-[4rem] text-muted-foreground/20 rotate-12" />
+        <Swords className="absolute top-[10rem] right-[5rem] w-[3rem] h-[3rem] text-muted-foreground/15 -rotate-45" />
+        <Plane className="absolute top-[15rem] left-1/4 w-[3.5rem] h-[3.5rem] text-muted-foreground/20 rotate-45" />
+        <Target className="absolute top-[20rem] right-1/3 w-[2.5rem] h-[2.5rem] text-muted-foreground/25" />
+        <Crown className="absolute top-[24rem] left-[5rem] w-[3rem] h-[3rem] text-muted-foreground/20 rotate-12" />
+        <Flag className="absolute bottom-[10rem] right-[4rem] w-[3.5rem] h-[3.5rem] text-muted-foreground/15 -rotate-12" />
+        <Zap className="absolute bottom-[15rem] left-1/3 w-[2.5rem] h-[2.5rem] text-muted-foreground/20 rotate-45" />
+        <Users className="absolute bottom-[20rem] right-1/4 w-[4rem] h-[4rem] text-muted-foreground/15" />
+        <Shield className="absolute bottom-[5rem] left-1/2 w-[3rem] h-[3rem] text-muted-foreground/20 -rotate-12" />
       </div>
       
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-foreground mb-12">
+      <div className="relative z-10 max-w-[72rem] mx-auto px-[1rem] sm:px-[1.5rem] md:px-[2rem]">
+        <h2 className="text-[1.5rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] font-bold text-center text-foreground mb-[3rem] sm:mb-[4rem] md:mb-[5rem]">
           Cronologia dos Eventos
         </h2>
         
-        <div className="space-y-16">
+        <div className="space-y-[2rem] sm:space-y-[3rem] md:space-y-[4rem]">
           {timelineEvents.map((event, index) => (
             <TimelineEvent
               key={event.year}

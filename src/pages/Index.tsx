@@ -4,7 +4,13 @@ import { Conclusion } from "@/components/Conclusion";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div 
+      className="min-h-screen bg-background"
+      style={{
+        /* Ensure safe area handling on viewport level */
+        minHeight: '100dvh' /* Dynamic viewport height for mobile - fallback to 100vh in older browsers */
+      }}
+    >
       <Hero />
       <Timeline />
       <Conclusion />
